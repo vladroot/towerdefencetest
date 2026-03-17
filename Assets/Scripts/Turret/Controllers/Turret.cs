@@ -9,6 +9,7 @@ namespace Game.Turret
     public class Turret : ITurret, IReplayable
     {
         private readonly TurretView _view;
+        private readonly ITurretsController _turretsController;
         private readonly IProjectilesController _projectilesController;
         private readonly ICreepStorage _creepStorage;
         private readonly IReplayer _replayer;
@@ -22,6 +23,7 @@ namespace Game.Turret
 
         public Turret(
             TurretView view,
+            ITurretsController turretsController,
             IProjectilesController projectilesController,
             ICreepStorage creepStorage,
             IReplayer replayer,
@@ -30,6 +32,7 @@ namespace Game.Turret
             _view = view;
             _view.OnEnter += TargetEnter;
             _view.OnExit += TargetExit;
+            _turretsController = turretsController;
             _projectilesController = projectilesController;
             _creepStorage = creepStorage;
             _replayer = replayer;
@@ -40,6 +43,7 @@ namespace Game.Turret
         public void Initialize()
         {
             _replayer.AddObject(this);
+            _turretsController.Register(this);
             _view.Barrel.eulerAngles = new Vector3(-_settings.BarrelAngle, 0f, 0f);
         }
 
@@ -80,8 +84,8 @@ namespace Game.Turret
             else if (_target == null && _unitsInRange.Count > 0)
             {
                 _target = _unitsInRange[0];
-                _unitsInRange.RemoveAt(0);
                 _target.OnDeath += OnRunnerDeath;
+                _unitsInRange.RemoveAt(0);
             }
         }
 
@@ -100,7 +104,7 @@ namespace Game.Turret
 
         private void TargetEnter(GameObject gameObject)
         {
-            if (_creepStorage.TryGet(gameObject, out Creep creep))
+            if (!_creepStorage.TryGet(gameObject, out Creep creep))
                 return;
 
             _unitsInRange.Add(creep);
