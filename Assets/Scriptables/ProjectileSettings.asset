@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56ff0ba76df3b1b518bcd7e66bd8d249, type: 3}
+  m_Name: ProjectileSettings
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Projectile.ProjectileSettings
+  _projectilePrefab: {fileID: -8628229368907379383, guid: f2c1922de9169094983175d11c30e5dd, type: 3}
+  _damage: 10
+  _projectileSpeed: 4

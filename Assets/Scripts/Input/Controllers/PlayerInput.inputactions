@@ -1,0 +1,131 @@
+{
+    "version": 1,
+    "name": "PlayerInput",
+    "maps": [
+        {
+            "name": "MouseInput",
+            "id": "908952ad-a757-4ac0-9748-acda363cf886",
+            "actions": [
+                {
+                    "name": "MousePosition",
+                    "type": "Value",
+                    "id": "5b929ae9-1939-4ec9-8992-8302fbc9d952",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "LeftMousePress",
+                    "type": "Button",
+                    "id": "1dec7d4b-0c29-4253-b9ec-19b899336512",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "60be43c5-1c2a-49a1-b0bf-d146b7bad1e1",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MousePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "598bf0d9-496a-453a-9cff-2735c3d66ea9",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftMousePress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "TouchInput",
+            "id": "40a49cbf-dd85-496e-bc67-235d660f5f6d",
+            "actions": [
+                {
+                    "name": "FirstTouchPosition",
+                    "type": "Value",
+                    "id": "307379a4-bc4e-412d-a858-80c908dbef11",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "FirstTouchContact",
+                    "type": "Button",
+                    "id": "2528f243-6e96-40a0-9efe-a9de2942919e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "71c96783-75fb-4f5b-8610-c55ee48ca881",
+                    "path": "<Touchscreen>/touch0/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FirstTouchPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "75908e90-2f0d-45d4-a047-78223e524e32",
+                    "path": "<Touchscreen>/touch0/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FirstTouchContact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "CommonInput",
+            "id": "273ec296-53c3-46bc-9536-776dba3ce301",
+            "actions": [
+                {
+                    "name": "SpaceAction",
+                    "type": "Button",
+                    "id": "0cf80060-50d6-4194-a68e-42fe5e5987cf",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "477d13b3-c2e7-48d7-acaa-84d9904aea45",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SpaceAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
