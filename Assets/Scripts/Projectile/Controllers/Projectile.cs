@@ -19,16 +19,16 @@ public class Projectile : IPoolable, IReplayable
     private float _damage;
     private EReplayStatus _replayStatus;
 
-    public Projectile(ProjectileView view, float speed, float damage)
+    public Projectile(ProjectileView view, float speed)
     {
         _view = view;
         _speed = speed;
-        _damage = damage;
     }
 
-    public void Init(Creep target)
+    public void Init(Creep target, float damage)
     {
         _target = target;
+        _damage = damage;
     }
 
     public void Activate(Vector3 position, Quaternion rotation)

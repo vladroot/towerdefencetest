@@ -49,11 +49,13 @@ namespace Common.Input
 
         private void OnFirstTouchContactStarted(InputAction.CallbackContext context)
         {
+            Debug.Log(TouchFirstPosition);
             OnFirstTouch?.Invoke(TouchFirstPosition);
         }
 
         private void OnLeftMousePressStarted(InputAction.CallbackContext context)
         {
+            Debug.Log(MousePositionValue);
             OnMouseDown?.Invoke(MousePositionValue);
         }
     }

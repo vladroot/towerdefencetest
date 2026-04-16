@@ -9,7 +9,7 @@ namespace Common.Input
         public override void InstallBindings()
         {
             Container.BindInterfacesAndSelfTo<PlayerInput>().AsSingle();
-            Container.BindInterfacesTo<PlayerInputController>().AsSingle();
+            Container.BindInterfacesAndSelfTo<PlayerInputController>().AsSingle().NonLazy();
         }
     }
 }

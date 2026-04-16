@@ -6,11 +6,13 @@ namespace Game.Projectiles
     public class ProjectileSettings : ScriptableObject
     {
         public ProjectileView ProjectilePrefab => _projectilePrefab;
-        public float Damage => _damage;
+        public float MinDamage => _minDamage;
+        public float MaxDamage => _maxDamage;
         public float ProjectileSpeed => _projectileSpeed;
 
         [SerializeField] private ProjectileView _projectilePrefab;
-        [SerializeField] private float _damage;
+        [SerializeField] private float _minDamage;
+        [SerializeField] private float _maxDamage;
         [SerializeField] private float _projectileSpeed;
     }
 }

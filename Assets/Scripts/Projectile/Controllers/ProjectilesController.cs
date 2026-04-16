@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Game.CreepSpawner;
 using Game.Replay;
+using UnityEngine;
 using Zenject;
 
 namespace Game.Projectiles
@@ -9,13 +10,15 @@ namespace Game.Projectiles
     {
         private readonly IFactory<Projectile> _factory;
         private readonly IReplayer _replayer;
+        private readonly ProjectileSettings _settings;
         private readonly Queue<Projectile> _projectilesPool = new Queue<Projectile>();
         private readonly List<Projectile> _allProjectiles = new List<Projectile>();
 
-        public ProjectilesController(IFactory<Projectile> factory, IReplayer replayer)
+        public ProjectilesController(IFactory<Projectile> factory, IReplayer replayer, ProjectileSettings settings)
         {
             _factory = factory;
             _replayer = replayer;
+            _settings = settings;
             _projectilesPool = new Queue<Projectile>();
             _allProjectiles = new List<Projectile>();
         }
@@ -44,7 +47,7 @@ namespace Game.Projectiles
 
         private void InitProjectile(ProjectileData data, Projectile projectile)
         {
-            projectile.Init(data.target);
+            projectile.Init(data.target, Random.Range(_settings.MinDamage, _settings.MaxDamage));
             projectile.Activate(data.position, data.rotation);
             projectile.OnTargetHit += TargetHit;
         }

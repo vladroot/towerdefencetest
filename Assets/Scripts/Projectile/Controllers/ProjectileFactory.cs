@@ -15,7 +15,7 @@ namespace Game.Projectiles
         public Projectile Create()
         {
             ProjectileView view = GameObject.Instantiate<ProjectileView>(_settings.ProjectilePrefab);
-            return new Projectile(view, _settings.ProjectileSpeed, _settings.Damage);
+            return new Projectile(view, _settings.ProjectileSpeed);
         }
     }
 }

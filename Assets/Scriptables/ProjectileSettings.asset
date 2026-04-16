@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: ProjectileSettings
   m_EditorClassIdentifier: Assembly-CSharp::Game.Projectile.ProjectileSettings
   _projectilePrefab: {fileID: -8628229368907379383, guid: f2c1922de9169094983175d11c30e5dd, type: 3}
-  _damage: 10
-  _projectileSpeed: 4
+  _minDamage: 25
+  _maxDamage: 35
+  _projectileSpeed: 5
