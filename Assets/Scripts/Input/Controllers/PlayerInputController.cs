@@ -1,10 +1,11 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Zenject;
 
 namespace Common.Input
 {
-    public class PlayerInputController : IPlayerInput, IDisposable
+    public class PlayerInputController : IPlayerInput, IInitializable, IDisposable
     {
         public event Action<Vector2> OnFirstTouch;
         public event Action<Vector2> OnMouseDown;
@@ -19,6 +20,11 @@ namespace Common.Input
         public PlayerInputController(PlayerInput playerInput)
         {
             _playerInput = playerInput;
+        }
+
+        public void Initialize()
+        {
+            _playerInput.Enable();
             _playerInput.CommonInput.SpaceAction.started += OnSpacePressStarted;
             _playerInput.CommonInput.SpaceAction.canceled += OnSpacePressCanceled;
             _playerInput.TouchInput.FirstTouchContact.started += OnFirstTouchContactStarted;
